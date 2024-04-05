@@ -1,0 +1,173 @@
+:root {
+    --dynamic-top-offset: 100px; /* For dynamic adjustments */
+}
+
+body {
+    @apply text-shop-front-blue;
+}
+section {
+    @apply bg-cover bg-no-repeat bg-center;
+}
+
+.container {
+    @apply max-w-[1440px] mx-auto relative z-10 py-[60px] lg:py-20 ;
+    &:not(.grid, .flex, .lg\:flex, .md\:flex, .sm\:flex) {
+        @apply space-y-[40px];
+    }   
+ }
+
+
+ /* Headings */ 
+$headings: one, two, three, four, five;
+
+@each $heading in $headings {
+  .heading-#{$heading} {
+    @apply font-tintin leading-[1.3];
+  }
+}
+
+ .heading-one {
+    @apply text-[48px] lg:text-[56px] xl:text-[64px];
+ }
+ .heading-two {
+    @apply text-[28px] lg:text-[32px];
+ }
+ .heading-three {
+    @apply text-[24px];
+ }
+.heading-four {
+    @apply text-[20px];
+}
+.heading-five {
+    @apply text-[18px];
+}
+.heading-six {
+    @apply font-sans font-semibold text-[22px];
+}
+
+.quotation {
+    @apply font-quote leading-none text-center space-y-6 lg:space-y-10 sm:my-6;
+    .quotation-sign {
+        @apply text-[102px] leading-[0.5];
+    }
+    .quote {
+        @apply text-[48px] lg:text-[64px] ;
+    }
+    .source, .title {
+        @apply text-[28px] lg:text-[32px];
+    }
+}
+
+
+/*Paragraphs*/
+.p-one {
+    @apply font-sans text-[16px] leading-[125%] tracking-[0.16px];
+}
+.p-two {
+    @apply font-sans text-[18px] lg:text-[16px] tracking-[0.18px] font-bold;
+}
+
+
+.btn {
+    @apply font-tintin inline-block text-covers-white uppercase relative text-center w-full md:w-auto cursor-pointer;
+    text-wrap: nowrap;
+    &.btn-small {
+        @apply text-[16px] pt-[14px] pb-[10px] px-[24px];
+    }
+    &.btn-medium {
+        @apply text-[18px] lg:text-[16px] pt-[14px] pb-[9px] px-[24px];
+    }
+    &.btn-large {
+        @apply text-[20px] lg:text-[24px] pt-[16px] pb-[9px] px-[24px];
+    }
+    &.bg-shop-front-blue {
+        @apply hover:bg-[#FC8517];
+    }
+    &.bg-covers-orange {
+        @apply hover:bg-[#F9D931];
+    }
+    transition: background-color 0.3s ease-in-out
+}
+
+
+/* Header Nav bar */
+.site-header {
+    @apply sticky z-40 top-0 left-0 right-0 shadow-custom bg-covers-white transition-all duration-700 ease-in-out;
+    .header-container {
+        @apply grid grid-cols-12 items-center h-[86px] lg:h-16 bg-covers-white px-10 lg:px-20 max-w-[1440px] mx-auto;
+    }
+    .left-site-navigation {
+        @apply col-span-5 z-40;
+        .desktop.menu-links {
+            @apply justify-start;
+        }
+    }
+    .site-branding {
+        @apply col-span-2 justify-self-center relative w-[86px] lg:w-[90px] h-[86px] lg:h-16 z-40 transition-all duration-700 ease-in-out;
+        .logo-container {
+            @apply h-[86px] w-[86px] lg:h-[90px] lg:w-[90px] absolute transition-all duration-700 ease-in-out;
+        }
+    }
+    .right-site-navigation {
+        @apply col-span-5 flex gap-x-6 justify-end;
+        .desktop.menu-links {
+            @apply justify-end;
+        }
+        .desktop.basket-search {
+            @apply hidden lg:flex gap-x-5;
+        }
+    }
+    .mobile-menu-icon {
+        @apply lg:hidden z-40;
+    }
+   
+    &.is-scrolled {
+        .site-branding {
+            @apply  w-[86px] h-[86px]  lg:w-[90px] lg:h-16 ;
+            .logo-container {
+                @apply h-[86px] w-[86px]  lg:h-[90px] lg:w-[90px] relative;
+            }
+        }
+    }
+
+    .menu-links {
+        @apply items-center gap-y-6 gap-x-8;
+        &.desktop {
+            @apply hidden lg:flex;
+            .menu-item {
+                @apply font-sans text-[18px] tracking-[0.36px] font-bold text-shop-front-blue;
+            }
+        }
+        &.mobile {
+            @apply flex flex-col mt-4 items-center;
+            .menu-item {
+                @apply heading-three text-shop-front-blue;
+            }
+        }
+        
+    }
+}
+
+.custom-border {
+    @apply border-dashed border-shop-front-blue;
+}
+
+
+.all-filters {
+    .select-default {
+        @apply text-shop-front-blue;
+    }
+    .select-changed {
+        @apply text-covers-turquoise;
+    }
+    select {
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        appearance: none; 
+        background-image: url('assets/img/icons/chevronRight.svg'); 
+        background-repeat: no-repeat;
+        background-position: right 10px center; 
+        background-size: 12px; 
+        padding-right: 30px;
+    }
+}
